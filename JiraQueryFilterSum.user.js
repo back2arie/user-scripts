@@ -15,7 +15,7 @@
 
     const CONFIG = {
         /* the script will run only on URLs that contain this identifier, ex: http://jira.mycompany.com */
-        URL_IDENTIFIER_FOR_JIRA: 'jira',
+        URL_IDENTIFIER_FOR_JIRA: 'atlassian',
 
         RUN_EVERY_SECONDS : 10, //seconds
 
@@ -77,8 +77,8 @@
 
         for (let k = 0; k < cells.length; k += 1) {
             const cell = cells[k];
-            if (cell.innerText && cell.innerText.length > 0 && isInteger(cell.innerText)) {
-                const effortInt = parseInt(cell.innerText, 10);
+            if (cell.innerText && cell.innerText.length > 0) {
+                const effortInt = parseFloat(cell.innerText);
                 if (!isNaN(effortInt)) {
                     array[k] += effortInt;
                 }
